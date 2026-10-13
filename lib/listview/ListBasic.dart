@@ -14,8 +14,9 @@ class ListBasic extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('ListView Basic')),
+      appBar: AppBar(title: const Text('Instagram')),
       body: ListView(
+        
         children: const [
           ListTile(title: Text('Apel')),
           ListTile(title: Text('Jeruk')),
