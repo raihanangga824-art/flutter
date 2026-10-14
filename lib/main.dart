@@ -3,6 +3,8 @@ import 'package:helloazisrpl2/container_widget/LatihanContainer.dart';
 import 'package:helloazisrpl2/list_grid_view/GridBasic.dart';
 import 'package:helloazisrpl2/list_grid_view/GridProductPage.dart';
 import 'package:helloazisrpl2/list_grid_view/Instagram.dart';
+import 'package:helloazisrpl2/pages/home_page.dart';
+import 'package:helloazisrpl2/routes/app_routes.dart';
 import 'package:helloazisrpl2/row_column_widget/ColumnWidget.dart';
 import 'package:helloazisrpl2/row_column_widget/RowWidget.dart';
 import 'package:helloazisrpl2/row_column_widget/RowColumnWidget.dart';
@@ -31,10 +33,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: "Flutter Pertama",
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: Instagram(),
-      ),
+      initialRoute: '/',
+      routes: AppRoutes.routes,
+      
     );
   }
 }

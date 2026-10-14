@@ -35,7 +35,7 @@ class Instagram extends StatelessWidget {
                     story('wijay', 'https://picsum.photos/id/70/200'),
                     story('evos_izal', 'https://picsum.photos/id/80/200'),
                     story('andrew', 'https://picsum.photos/id/90/200'),
-                    story('tobey maguire', 'https://picsum.photos/id/100/200'),
+                    story('rrq_rinz', 'https://picsum.photos/id/100/200'),
                   ],
                 ),
               ),
