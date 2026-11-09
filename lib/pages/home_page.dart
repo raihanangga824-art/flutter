@@ -43,6 +43,12 @@ class HomePage extends StatelessWidget {
             },
             child: Text('Pergi Ke Halaman Formulir'),
           ),
+          FilledButton(
+            onPressed: () {
+              Navigator.pushNamed(context, '/input');
+            },
+            child: Text('Pergi Ke Halaman Input'),
+          ),
           TextButton(
             onPressed: () {},
             child: Text('Selengkapnya'),
