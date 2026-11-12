@@ -8,24 +8,38 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF8F9FA),
+      backgroundColor: const Color(0xFFF4F6F9),
       appBar: AppBar(
         backgroundColor: Colors.white,
-        elevation: 0.5,
+        elevation: 0,
+        centerTitle: false,
         title: Row(
           children: const [
-            Icon(Icons.restaurant, color: Colors.deepOrange),
-            SizedBox(width: 8),
+            CircleAvatar(
+              radius: 16,
+              backgroundColor: Colors.indigo,
+              child: Icon(Icons.person, color: Colors.white, size: 18),
+            ),
+            SizedBox(width: 10),
             Text(
-              'Home Assalaam Food',
-              style: TextStyle(color: Color(0xFF222222), fontWeight: FontWeight.bold),
+              'Raihan Muhammad Azis',
+              style: TextStyle(
+                color: Color(0xFF1E293B),
+                fontWeight: FontWeight.bold,
+                fontSize: 16,
+              ),
             ),
           ],
         ),
         actions: [
           IconButton(
             onPressed: () {},
-            icon: const Icon(Icons.delete, color: Colors.grey),
+            icon: const Icon(Icons.notifications_none, color: Color(0xFF64748B)),
+            tooltip: 'Notifikasi',
+          ),
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.delete_outline, color: Color(0xFF64748B)),
             tooltip: 'Hapus',
           ),
         ],
@@ -34,23 +48,24 @@ class HomePage extends StatelessWidget {
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(20.0),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Header Banner
+              // Kartu Sambutan (Welcome Banner yang Bersih)
               Container(
                 width: double.infinity,
                 padding: const EdgeInsets.all(20),
                 decoration: BoxDecoration(
                   gradient: const LinearGradient(
-                    colors: [Color(0xFFFF6B00), Color(0xFFFF9233)],
+                    colors: [Color(0xFF3B82F6), Color(0xFF1D4ED8)],
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                   ),
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.circular(16),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.deepOrange.withOpacity(0.3),
-                      blurRadius: 12,
-                      offset: const Offset(0, 6),
+                      color: Colors.blue.withOpacity(0.25),
+                      blurRadius: 10,
+                      offset: const Offset(0, 4),
                     ),
                   ],
                 ),
@@ -59,187 +74,187 @@ class HomePage extends StatelessWidget {
                   children: const [
                     Text(
                       'Selamat Datang! 👋',
-                      style: TextStyle(color: Colors.white, fontSize: 22, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                     SizedBox(height: 6),
                     Text(
-                      'Pilih menu di bawah untuk masuk ke Kantin Assalaam Food atau navigasi lainnya.',
-                      style: TextStyle(color: Colors.white, fontSize: 13),
-                    ),
-                  ],
-                ),
-              ),
-              const SizedBox(height: 20),
-
-              // Tombol Akses Utama Kantin Assalaam
-              Container(
-                width: double.infinity,
-                padding: const EdgeInsets.all(16),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(16),
-                  boxShadow: [
-                    BoxShadow(color: Colors.black.withOpacity(0.04), blurRadius: 10, offset: const Offset(0, 4)),
-                  ],
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Text(
-                      'Aplikasi Kantin Assalaam Food',
-                      style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.deepOrange),
-                    ),
-                    const SizedBox(height: 12),
-                    SizedBox(
-                      width: double.infinity,
-                      height: 50,
-                      child: ElevatedButton.icon(
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.deepOrange,
-                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-                        ),
-                        onPressed: () {
-                          Navigator.pushNamed(context, AppRoutes.foodList);
-                        },
-                        icon: const Icon(Icons.fastfood, color: Colors.white),
-                        label: const Text(
-                          'Buka Kantin Assalaam Food',
-                          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 15),
-                        ),
+                      'Halo, raihan muhammad azis al ghifari. Semoga harimu menyenangkan!',
+                      style: TextStyle(
+                        color: Colors.white70,
+                        fontSize: 13,
+                        height: 1.4,
                       ),
                     ),
                   ],
                 ),
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 24),
 
-              // Daftar Tombol Navigasi Sesuai Kebutuhan Anda
-              Container(
-                width: double.infinity,
-                padding: const EdgeInsets.all(16),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(16),
-                  boxShadow: [
-                    BoxShadow(color: Colors.black.withOpacity(0.04), blurRadius: 10, offset: const Offset(0, 4)),
-                  ],
+              // Bagian Menu Navigasi
+              const Text(
+                'Menu Navigasi',
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xFF1E293B),
                 ),
-                child: Column(
-                  children: [
-                    const Text(
-                      'Navigasi Halaman Lainnya',
-                      style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-                    ),
-                    const SizedBox(height: 15),
+              ),
+              const SizedBox(height: 12),
 
-                    // 1. ElevatedButton (About)
-                    SizedBox(
-                      width: double.infinity,
-                      height: 48,
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.orange,
-                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-                        ),
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) {
-                                return const AboutPage();
-                              },
-                            ),
-                          );
-                        },
-                        child: const Text('Pergi Ke Halaman About', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
-                      ),
+              // Daftar Tombol Navigasi dengan Icon Kustom yang Rapi
+              _buildMenuCard(
+                title: 'Halaman About',
+                subtitle: 'Informasi aplikasi dan profil',
+                icon: Icons.info_outline,
+                color: Colors.orange,
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const AboutPage(),
                     ),
-                    const SizedBox(height: 10),
-
-                    // 2. FilledButton (Instagram)
-                    SizedBox(
-                      width: double.infinity,
-                      height: 48,
-                      child: FilledButton(
-                        style: FilledButton.styleFrom(
-                          backgroundColor: const Color(0xFFE1306C),
-                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-                        ),
-                        onPressed: () {
-                          Navigator.pushNamed(context, AppRoutes.instagram);
-                        },
-                        child: const Text('Pergi Ke Halaman Instagram'),
-                      ),
-                    ),
-                    const SizedBox(height: 10),
-
-                    // 3. OutlinedButton (List)
-                    SizedBox(
-                      width: double.infinity,
-                      height: 48,
-                      child: OutlinedButton(
-                        style: OutlinedButton.styleFrom(
-                          side: const BorderSide(color: Colors.deepOrange),
-                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-                        ),
-                        onPressed: () {
-                          Navigator.pushNamed(context, AppRoutes.list);
-                        },
-                        child: const Text('Pergi Ke Halaman List', style: TextStyle(color: Colors.deepOrange, fontWeight: FontWeight.bold)),
-                      ),
-                    ),
-                    const SizedBox(height: 10),
-
-                    // 4. FilledButton (Formulir)
-                    SizedBox(
-                      width: double.infinity,
-                      height: 48,
-                      child: FilledButton(
-                        style: FilledButton.styleFrom(
-                          backgroundColor: Colors.blueGrey,
-                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-                        ),
-                        onPressed: () {
-                          Navigator.pushNamed(context, AppRoutes.formulir);
-                        },
-                        child: const Text('Pergi Ke Halaman Formulir'),
-                      ),
-                    ),
-                    const SizedBox(height: 10),
-
-                    // 5. FilledButton (Input)
-                    SizedBox(
-                      width: double.infinity,
-                      height: 48,
-                      child: FilledButton(
-                        style: FilledButton.styleFrom(
-                          backgroundColor: Colors.teal,
-                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-                        ),
-                        onPressed: () {
-                          Navigator.pushNamed(context, AppRoutes.input);
-                        },
-                        child: const Text('Pergi Ke Halaman Input'),
-                      ),
-                    ),
-                  ],
-                ),
+                  );
+                },
               ),
               const SizedBox(height: 10),
 
-              // TextButton Selengkapnya
-              TextButton(
-                onPressed: () {},
-                child: const Text('Selengkapnya', style: TextStyle(color: Colors.deepOrange, fontWeight: FontWeight.bold)),
+              _buildMenuCard(
+                title: 'Halaman Instagram',
+                subtitle: 'Kunjungi tautan sosial media',
+                icon: Icons.camera_alt_outlined,
+                color: const Color(0xFFE1306C),
+                onTap: () {
+                  Navigator.pushNamed(context, AppRoutes.instagram);
+                },
+              ),
+              const SizedBox(height: 10),
+
+              _buildMenuCard(
+                title: 'Halaman List',
+                subtitle: 'Lihat daftar item dan data',
+                icon: Icons.list_alt_rounded,
+                color: Colors.blue,
+                onTap: () {
+                  Navigator.pushNamed(context, AppRoutes.list);
+                },
+              ),
+              const SizedBox(height: 10),
+
+              _buildMenuCard(
+                title: 'Halaman Formulir',
+                subtitle: 'Isi data formulir interaktif',
+                icon: Icons.edit_note_rounded,
+                color: Colors.blueGrey,
+                onTap: () {
+                  Navigator.pushNamed(context, AppRoutes.formulir);
+                },
+              ),
+              const SizedBox(height: 10),
+
+              _buildMenuCard(
+                title: 'Halaman Input',
+                subtitle: 'Kelola masukan data pengguna',
+                icon: Icons.input_rounded,
+                color: Colors.teal,
+                onTap: () {
+                  Navigator.pushNamed(context, AppRoutes.input);
+                },
+              ),
+              const SizedBox(height: 10),
+
+              _buildMenuCard(
+                title: 'Halaman Album Page',
+                subtitle: 'Jelajahi galeri foto dan album',
+                icon: Icons.photo_album_outlined,
+                color: const Color(0xFF4F46E5),
+                onTap: () {
+                  Navigator.pushNamed(context, AppRoutes.album);
+                },
+              ),
+              const SizedBox(height: 10),
+
+              _buildMenuCard(
+                title: 'Kantin Assalaam Food',
+                subtitle: 'Pesan makanan dan minuman favoritmu',
+                icon: Icons.fastfood_outlined,
+                color: Colors.deepOrange,
+                onTap: () {
+                  Navigator.pushNamed(context, AppRoutes.foodList);
+                },
               ),
             ],
           ),
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.deepOrange,
+        backgroundColor: Colors.indigo,
+        elevation: 4,
         onPressed: () {},
         child: const Icon(Icons.add, color: Colors.white),
+      ),
+    );
+  }
+
+  // Widget helper untuk kartu menu yang konsisten, rapi, dan dilengkapi icon
+  Widget _buildMenuCard({
+    required String title,
+    required String subtitle,
+    required IconData icon,
+    required Color color,
+    required VoidCallback onTap,
+  }) {
+    return Material(
+      color: Colors.white,
+      borderRadius: BorderRadius.circular(12),
+      elevation: 1,
+      shadowColor: Colors.black.withOpacity(0.05),
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: BorderRadius.circular(12),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+          child: Row(
+            children: [
+              Container(
+                padding: const EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: color.withOpacity(0.1),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Icon(icon, color: color, size: 22),
+              ),
+              const SizedBox(width: 14),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      title,
+                      style: const TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xFF1E293B),
+                      ),
+                    ),
+                    const SizedBox(height: 2),
+                    Text(
+                      subtitle,
+                      style: const TextStyle(
+                        fontSize: 12,
+                        color: Color(0xFF64748B),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const Icon(Icons.arrow_forward_ios, size: 14, color: Color(0xFF94A3B8)),
+            ],
+          ),
+        ),
       ),
     );
   }
